@@ -1,1 +1,30 @@
+The following technologies are involved in the application:Spring Boot, JUnit, Maven, Postgreasql, Mockito.
+1.Creat client(POST)
+Exemple of json request
 
+{"firstName": "name",
+"lastName": "lastname",
+"birthday": "1993-03-03",
+"gender": "MALE",
+"phoneNumbers": [{"phoneNumber": "123321414"}]}
+
+2.Endpoint to create call(POST)
+  Exemple:
+  
+{
+  "callersPhoneNumber": {
+    "phoneNumber": "323214414212"
+  },
+  "recipientsPhoneNumber": {
+    "phoneNumber": "380951234567"
+  },
+  "date": "2019-06-07 10:10:10",
+  "duration": 1231,
+  "city": "Dnipro"
+}
+
+3. Endpoint to get information about number of calls per each city (GET)
+   http://localhost:8080/calls
+
+4. Endpoint for providing information about the longest call for defined client id and specified date range.(GET)
+http://localhost:8080/calls/{clientId}/longest_call?start={starDate}end={endDate}
